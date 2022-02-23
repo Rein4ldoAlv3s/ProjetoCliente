@@ -14,6 +14,7 @@ public class ProjetoClienteApplication implements CommandLineRunner{
 
 	@Autowired
 	private ClienteRepository clienteRepository;
+	
 		
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoClienteApplication.class, args);
@@ -21,10 +22,10 @@ public class ProjetoClienteApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		Cliente cli1 = new Cliente(null, "Reinaldo", "naldos15@hotmail.com", "03859968211", TipoCliente.PESSOAFISICA);   
-		
+		Cliente cli1 = new Cliente(null, "Reinaldo", "teste@hotmail.com", "53458432423432", TipoCliente.PESSOAFISICA);  
 		clienteRepository.save(cli1);
 	}
+
+	
 
 }

@@ -1,5 +1,7 @@
 package com.reinaldo.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,8 +10,10 @@ import javax.persistence.Id;
 import com.reinaldo.domain.enums.TipoCliente;
 
 @Entity
-public class Cliente {
+public class Cliente implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -28,7 +32,7 @@ public class Cliente {
 		this.nome = nome;
 		this.email = email;
 		this.cpfOuCnpj = cpfOuCnpj;
-		this.tipo = tipo.getId();
+		this.tipo = tipo.getCod();
 	}
 
 	public Integer getId() {
@@ -68,9 +72,8 @@ public class Cliente {
 	}
 
 	public void setTipo(TipoCliente tipo) {
-		this.tipo = tipo.getId();
+		this.tipo = tipo.getCod();
 	}
-	
 	
 	
 }

@@ -5,16 +5,16 @@ public enum TipoCliente {
 	PESSOAFISICA(1, "Pessoa Física"),
 	PESSOAJURIDICA(2, "Pessoa Jurídica");
 	
-	private int id;
+	private Integer cod;
 	private String descricao;
 	
-	private TipoCliente(int id, String descricao) {
-		this.id = id;
+	private TipoCliente(Integer cod, String descricao) {
+		this.cod = cod;
 		this.descricao = descricao;
 	}
 
-	public int getId() {
-		return id;
+	public Integer getCod() {
+		return cod;
 	}
 
 	public String getDescricao() {
@@ -26,12 +26,11 @@ public enum TipoCliente {
 			return null;
 		}
 		for(TipoCliente x : TipoCliente.values()) {
-			if(cod.equals(x.getId())) {
+			if(cod.equals(x.getCod())) {
 				return x;
 			}
 		}
-		throw new IllegalArgumentException("Codigo inválido " + cod);
+		throw new IllegalArgumentException("Codigo nao encontrado " + cod);
 	}
-	
 	
 }
