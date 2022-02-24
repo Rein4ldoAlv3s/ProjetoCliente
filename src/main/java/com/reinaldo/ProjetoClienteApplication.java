@@ -1,5 +1,7 @@
 package com.reinaldo;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,9 +25,7 @@ public class ProjetoClienteApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		Cliente cli1 = new Cliente(null, "Reinaldo", "teste@hotmail.com", "53458432423432", TipoCliente.PESSOAFISICA);  
+		cli1.getTelefones().addAll(Arrays.asList("62993850194", "62991560025"));
 		clienteRepository.save(cli1);
 	}
-
-	
-
 }
